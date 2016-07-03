@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F1D58E31D28FC47001EB61F /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F1D58E21D28FC47001EB61F /* CFNetwork.framework */; };
+		5F1D58E91D28FEFA001EB61F /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1D58E61D28FEFA001EB61F /* AsyncSocket.m */; };
+		5F1D58EA1D28FEFA001EB61F /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1D58E81D28FEFA001EB61F /* AsyncUdpSocket.m */; };
+		5F1D58EE1D28FF94001EB61F /* ASSocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F1D58ED1D28FF94001EB61F /* ASSocketManager.m */; };
 		5F39A0A71D28899000BB5D19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F39A0A61D28899000BB5D19 /* main.m */; };
 		5F39A0AA1D28899000BB5D19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F39A0A91D28899000BB5D19 /* AppDelegate.m */; };
 		5F39A0AD1D28899000BB5D19 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F39A0AC1D28899000BB5D19 /* ViewController.m */; };
@@ -35,6 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F1D58E21D28FC47001EB61F /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		5F1D58E51D28FEFA001EB61F /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		5F1D58E61D28FEFA001EB61F /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		5F1D58E71D28FEFA001EB61F /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		5F1D58E81D28FEFA001EB61F /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		5F1D58EC1D28FF94001EB61F /* ASSocketManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASSocketManager.h; sourceTree = "<group>"; };
+		5F1D58ED1D28FF94001EB61F /* ASSocketManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASSocketManager.m; sourceTree = "<group>"; };
 		5F39A0A21D28899000BB5D19 /* socketTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socketTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F39A0A61D28899000BB5D19 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F39A0A81D28899000BB5D19 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1D58E31D28FC47001EB61F /* CFNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,9 +90,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F1D58E41D28FEFA001EB61F /* ASSocket */ = {
+			isa = PBXGroup;
+			children = (
+				5F1D58E51D28FEFA001EB61F /* AsyncSocket.h */,
+				5F1D58E61D28FEFA001EB61F /* AsyncSocket.m */,
+				5F1D58E71D28FEFA001EB61F /* AsyncUdpSocket.h */,
+				5F1D58E81D28FEFA001EB61F /* AsyncUdpSocket.m */,
+			);
+			name = ASSocket;
+			path = socketTest/ASSocket;
+			sourceTree = "<group>";
+		};
+		5F1D58EB1D28FF66001EB61F /* SocketManager */ = {
+			isa = PBXGroup;
+			children = (
+				5F1D58EC1D28FF94001EB61F /* ASSocketManager.h */,
+				5F1D58ED1D28FF94001EB61F /* ASSocketManager.m */,
+			);
+			name = SocketManager;
+			sourceTree = "<group>";
+		};
 		5F39A0991D28899000BB5D19 = {
 			isa = PBXGroup;
 			children = (
+				5F1D58E21D28FC47001EB61F /* CFNetwork.framework */,
+				5F1D58EB1D28FF66001EB61F /* SocketManager */,
+				5F1D58E41D28FEFA001EB61F /* ASSocket */,
 				5F39A0A41D28899000BB5D19 /* socketTest */,
 				5F39A0BE1D28899000BB5D19 /* socketTestTests */,
 				5F39A0C91D28899000BB5D19 /* socketTestUITests */,
@@ -273,9 +309,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1D58EE1D28FF94001EB61F /* ASSocketManager.m in Sources */,
 				5F39A0AD1D28899000BB5D19 /* ViewController.m in Sources */,
+				5F1D58EA1D28FEFA001EB61F /* AsyncUdpSocket.m in Sources */,
 				5F39A0AA1D28899000BB5D19 /* AppDelegate.m in Sources */,
 				5F39A0A71D28899000BB5D19 /* main.m in Sources */,
+				5F1D58E91D28FEFA001EB61F /* AsyncSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +540,7 @@
 				5F39A0D11D28899000BB5D19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F39A0D21D28899000BB5D19 /* Build configuration list for PBXNativeTarget "socketTestTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +549,7 @@
 				5F39A0D41D28899000BB5D19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F39A0D51D28899000BB5D19 /* Build configuration list for PBXNativeTarget "socketTestUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +558,7 @@
 				5F39A0D71D28899000BB5D19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
