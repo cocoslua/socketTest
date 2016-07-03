@@ -7,7 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AsyncSocket.h"
+#import "AsyncUdpSocket.h"
+#import <sys/socket.h>
+#import <netinet/in.h>
+#import <arpa/inet.h>
+#import <unistd.h>
 
-@interface ASSocketManager : NSObject
+enum{
+    SocketOfflineByServer, //服务器掉线
+    SocketOfflineByUser , //用户挂断
+};
+
+@interface ASSocketManager : NSObject<AsyncSocketDelegate>
+@property (nonatomic, retain)AsyncSocket* socket;
+@property (nonatomic, retain)NSString *host;
+@property (nonatomic)UInt16 port;
+
++(ASSocketManager*)manager;
+-(void)connectToHost;
+-(void)cutOffConnect;
 
 @end

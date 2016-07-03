@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "ASSocketManager.h"
 
 @interface ViewController ()
 
@@ -18,6 +18,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
+    
+    ASSocketManager* socketManager = [ASSocketManager manager];
+    socketManager.host = @"127.0.0.1";
+    socketManager.port = 10005;
+    
+//    //手动断开
+//    socketManager.socket.userData = SocketOfflineByUser;
+//    [socketManager cutOffConnect];
+    
+    //开始连接
+    socketManager.socket.userData = SocketOfflineByServer;
+    [socketManager connectToHost];
     
 }
 
